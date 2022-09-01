@@ -7,6 +7,7 @@ use App\Http\Requests\StoreCalendarRequest;
 use App\Http\Requests\UpdateCalendarRequest;
 use App\Models\Field;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class CalendarController extends Controller
 {
@@ -15,19 +16,17 @@ class CalendarController extends Controller
      *
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
      */
-    public function index(Request $request)
+    public function index()
     {
-        $search = $request->get('q');
-        $data = Field::where('name','like','%' .$search. '%')->paginate(2)->appends(['q' => $search]);
+        $data = Field::where('id_manager','=',Auth::id())->get();
         return view('manager.field.calendar', [
             'data' => $data,
-            'search'=>$search
         ]);
 
     }
     public function index_calendar()
     {
-        $data = Field::all();
+        $data =  Field::where('id_manager','=',Auth::id())->get();
         return view('manager.field.calendar_index',[
             'data'=> $data,
             ]
@@ -35,7 +34,7 @@ class CalendarController extends Controller
     }
     public function index_calendar_show($id)
     {
-        $data = Calendar::where('id_field','=',$id)->get();
+        $data = Calendar::where('id_field','=',$id)->where('id_manager','=',Auth::id())->get();
         return view('manager.field.calendar_index_show_table',[
                 'data'=> $data,
             ]
@@ -49,7 +48,7 @@ class CalendarController extends Controller
      */
     public function create()
     {
-        $data = Field::all();
+        $data = Field::where('id_manager','=',Auth::id())->get();
         return view('manager.field.calendar', [
             'data' => $data,
         ]);

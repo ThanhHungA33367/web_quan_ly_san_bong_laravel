@@ -8,6 +8,7 @@ use App\Http\Requests\UpdateBillRequest;
 use App\Models\Calendar;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Yajra\DataTables\DataTables;
 
 class BillController extends Controller
@@ -32,6 +33,7 @@ class BillController extends Controller
         return Datatables::of(Bill::query()
             ->join('fields','id_field','=','fields.id')
             ->select('bills.*','fields.name as fieldname','fields.type as fieldtype')
+            ->where('id_manager','=',Auth::id())
             ->where('bills.status','=','1'))->make(true);
     }
     public function create()

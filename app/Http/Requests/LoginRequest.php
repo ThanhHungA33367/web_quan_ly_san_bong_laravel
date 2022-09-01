@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class StoreManagerRequest extends FormRequest
+class LoginRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,6 +24,14 @@ class StoreManagerRequest extends FormRequest
     public function rules()
     {
         return [
+            'email'=>'bail|required',
+            'password'=>'bail|required',
+        ];
+    }
+    public function messages(){
+        return [
+            'email.required'=>'Vui lòng nhập email',
+            'password.required'=>'Vui lòng nhập password',
         ];
     }
 }

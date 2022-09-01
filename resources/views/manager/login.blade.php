@@ -20,6 +20,9 @@
 
 <body class="authentication-bg" data-layout-config='{"darkMode":false}'>
 
+
+
+
 <div class="auth-fluid">
     <!--Auth fluid left content -->
     <div class="auth-fluid-form-box">
@@ -41,15 +44,23 @@
                 <p class="text-muted mb-4">Enter your email address and password to access account.</p>
 
                 <!-- form -->
-                <form action="#">
+                @if (count($errors) >0)
+                    <ul>
+                        @foreach($errors->all() as $error)
+                            <li class="text-danger"> {{ $error }}</li>
+                        @endforeach
+                    </ul>
+                @endif
+                <form action="{{route('admin.login')}} " method="post">
+                    @csrf
                     <div class="form-group">
-                        <label for="emailaddress">Email address</label>
-                        <input class="form-control" type="email" id="emailaddress" required="" placeholder="Enter your email">
+                        <label for="emailaddress">Email</label>
+                        <input class="form-control" type="email" name="email" placeholder="Enter your email">
                     </div>
                     <div class="form-group">
                         <a href="pages-recoverpw-2.html" class="text-muted float-right"><small>Forgot your password?</small></a>
                         <label for="password">Password</label>
-                        <input class="form-control" type="password" required="" id="password" placeholder="Enter your password">
+                        <input class="form-control" type="password" name="password" placeholder="Enter your password">
                     </div>
                     <div class="form-group mb-3">
                         <div class="custom-control custom-checkbox">
@@ -58,7 +69,7 @@
                         </div>
                     </div>
                     <div class="form-group mb-0 text-center">
-                        <button class="btn btn-primary btn-block" type="submit"><i class="mdi mdi-login"></i> Log In </button>
+                        <button class="btn btn-primary btn-block" ><i class="mdi mdi-login"></i> Log In </button>
                     </div>
                     <!-- social-->
                     <div class="text-center mt-4">

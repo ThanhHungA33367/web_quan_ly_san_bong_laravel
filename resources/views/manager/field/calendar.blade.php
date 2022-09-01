@@ -1,13 +1,12 @@
 @extends('manager.master')
 @section('content')
-
     <form id="form_add_calendar" >
         @csrf
         <div class="form-group mb-3">
             <label>Sân</label>
             <br>
             <select id="field" class="custom-select mb-3 col-5" name="id_field">
-                <option disabled selected>Chọn sân </option>
+                <option disabled selected>Chọn sân</option>
                 @foreach($data as $each)
                 <option value="{{$each->id}}" > {{$each->name}} </option>
                 @endforeach

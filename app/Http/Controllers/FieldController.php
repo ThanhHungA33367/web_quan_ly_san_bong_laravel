@@ -6,6 +6,7 @@ use App\Models\Field;
 use App\Http\Requests\StoreFieldRequest;
 use App\Http\Requests\UpdateFieldRequest;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Storage;
 
@@ -19,7 +20,7 @@ class FieldController extends Controller
     public function index(Request $request)
     {
         $search = $request->get('q');
-        $data = Field::where('name','like','%' .$search. '%')->paginate(2)->appends(['q' => $search]);
+        $data = Field::where('name','like','%' .$search. '%')->where('id_manager','=',Auth::id())->paginate(2)->appends(['q' => $search]);
         return view('manager.field.index', [
             'data' => $data,
             'search'=>$search

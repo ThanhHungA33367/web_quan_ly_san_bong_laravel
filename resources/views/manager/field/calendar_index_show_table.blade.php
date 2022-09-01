@@ -1,4 +1,3 @@
-
 <table class="table table-striped">
     <tr>
         <th>Time_start</th>
