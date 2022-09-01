@@ -56,8 +56,9 @@ class FieldController extends Controller
         $field['time_close'] = $time_stamp_close;
         $field['option'] = '1';
         $field['status'] = '1';
-        $field['id_manager'] = '1';
+        $field['id_manager'] = Auth::id();
         $field->save();
+
 
     }
 
@@ -86,6 +87,8 @@ class FieldController extends Controller
             'object' => $object,
         ]);
 
+
+
     }
 
     /**
@@ -106,7 +109,7 @@ class FieldController extends Controller
         $field['time_open'] = $time_stamp_open;
         $field['time_close'] = $time_stamp_close;
         $field->save();
-        return redirect()->route('calendar.index');
+        return redirect()->route('field.index')->with('message', 'Sửa thành công!');
 
     }
 

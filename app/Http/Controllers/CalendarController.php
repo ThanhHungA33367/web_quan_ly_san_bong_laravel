@@ -34,7 +34,7 @@ class CalendarController extends Controller
     }
     public function index_calendar_show($id)
     {
-        $data = Calendar::where('id_field','=',$id)->where('id_manager','=',Auth::id())->get();
+        $data = Calendar::where('id_field','=',$id)->get();
         return view('manager.field.calendar_index_show_table',[
                 'data'=> $data,
             ]
@@ -111,13 +111,12 @@ class CalendarController extends Controller
      * @param  \App\Http\Requests\UpdateCalendarRequest  $request
      * @param  \App\Models\Calendar  $calendar
      *
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\RedirectResponse|\Illuminate\Http\Response
      */
     public function update(Request $request)
     {
         $time_stamp_start = date("Y-m-d").' '.$request->time_start.':00';
         $time_stamp_end = date("Y-m-d").' '.$request->time_end.':00';
-        $update = Calendar::where('id', $request->id)
+        Calendar::where('id', $request->id)
             ->update([
                 'time_start' => $time_stamp_start,
                 'time_end' =>$time_stamp_end,

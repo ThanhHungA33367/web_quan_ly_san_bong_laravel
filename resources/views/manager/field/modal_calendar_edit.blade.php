@@ -10,6 +10,7 @@
         <input type="time" step="any" name="time_end"  class="form-control" value="{{$object->getTimeEnd()}}">
     </div>
     <input type="hidden" name="id"  class="form-control" value="{{$object->id}}">
+    <input type="hidden" name="id_field"  class="form-control" value="{{$object->id_field}}">
     <div class="form-group mb-3">
         <label for="example-password">Price</label>
         <input type="text" name="price" class="form-control" value="{{$object->price}}">

@@ -1,4 +1,5 @@
 <div class="navbar-custom topnav-navbar topnav-navbar-dark">
+
     <div class="container-fluid">
 
         <!-- LOGO -->
@@ -13,6 +14,9 @@
 
         <ul class="list-unstyled topbar-right-menu float-right mb-0">
 
+
+
+
             <li class="dropdown notification-list d-lg-none">
                 <a class="nav-link dropdown-toggle arrow-none" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
                     <i class="dripicons-search noti-icon"></i>
@@ -26,28 +30,28 @@
 
             <li class="dropdown notification-list topbar-dropdown d-none d-lg-block">
                 <a class="nav-link dropdown-toggle arrow-none" data-toggle="dropdown" id="topbar-languagedrop" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-                    <img src="assets/images/flags/us.jpg" alt="user-image" class="mr-1" height="12"> <span class="align-middle">English</span> <i class="mdi mdi-chevron-down align-middle"></i>
+                     <span class="align-middle">English</span> <i class="mdi mdi-chevron-down align-middle"></i>
                 </a>
                 <div class="dropdown-menu dropdown-menu-right dropdown-menu-animated topbar-dropdown-menu" aria-labelledby="topbar-languagedrop">
 
                     <!-- item-->
                     <a href="javascript:void(0);" class="dropdown-item notify-item">
-                        <img src="assets/images/flags/germany.jpg" alt="user-image" class="mr-1" height="12"> <span class="align-middle">German</span>
+                        <span class="align-middle">German</span>
                     </a>
 
                     <!-- item-->
                     <a href="javascript:void(0);" class="dropdown-item notify-item">
-                        <img src="assets/images/flags/italy.jpg" alt="user-image" class="mr-1" height="12"> <span class="align-middle">Italian</span>
+                        <span class="align-middle">Italian</span>
                     </a>
 
                     <!-- item-->
                     <a href="javascript:void(0);" class="dropdown-item notify-item">
-                        <img src="assets/images/flags/spain.jpg" alt="user-image" class="mr-1" height="12"> <span class="align-middle">Spanish</span>
+                         <span class="align-middle">Spanish</span>
                     </a>
 
                     <!-- item-->
                     <a href="javascript:void(0);" class="dropdown-item notify-item">
-                        <img src="assets/images/flags/russia.jpg" alt="user-image" class="mr-1" height="12"> <span class="align-middle">Russian</span>
+                         <span class="align-middle">Russian</span>
                     </a>
 
                 </div>
@@ -205,13 +209,10 @@
             <li class="dropdown notification-list">
                 <a class="nav-link dropdown-toggle nav-user arrow-none mr-0" data-toggle="dropdown" id="topbar-userdrop" href="#" role="button" aria-haspopup="true"
                    aria-expanded="false">
-                                        <span class="account-user-avatar">
-                                            <img src="assets/images/users/avatar-1.jpg" alt="user-image" class="rounded-circle">
-                                        </span>
                     <span>
-                                            <span class="account-user-name">Dominic Keller</span>
-                                            <span class="account-position">Founder</span>
-                                        </span>
+                        <span class="account-user-name">Dominic Keller</span>
+                        <span class="account-position">Founder</span>
+                    </span>
                 </a>
                 <div class="dropdown-menu dropdown-menu-right dropdown-menu-animated topbar-dropdown-menu profile-dropdown" aria-labelledby="topbar-userdrop">
                     <!-- item-->

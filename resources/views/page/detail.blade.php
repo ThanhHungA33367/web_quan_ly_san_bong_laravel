@@ -12,6 +12,7 @@
         ?>
 
     @endforeach
+
     <div class="modal" id="mediumModal" tabindex="-1" role="dialog" aria-labelledby="mediumModalLabel"
          aria-hidden="true">
         <div class="modal-dialog" role="document">
@@ -32,10 +33,17 @@
 
 <div class="row">
     <div class="col-12">
+        <a href="{{route('page.index')}}" class="btn btn-secondary btn-xs" style="margin-left: 5px;margin-top: -16px">
+                    <span class="glyphicon-arrow-left" >
+
+                    </span>
+            Quay lại
+        </a>
         <div class="card">
             <div class="card-body">
                 <div class="row">
                     <div class="col-lg-5">
+
                         <!-- Product image -->
                         <a href="javascript: void(0);" class="text-center d-block mb-4">
                             <img src="{{asset('/storage/'.$first->image)}}" class="img-fluid" style="max-width: 450px;" alt="Product-img" />
@@ -45,12 +53,7 @@
                             <a href="javascript: void(0);">
                                 <img src="{{asset('/storage/'.$first->image)}}" class="img-fluid img-thumbnail p-2" style="max-width: 75px;" alt="Product-img" />
                             </a>
-                            <a href="javascript: void(0);" class="ml-2">
-                                <img src="assets/images/products/product-6.jpg" class="img-fluid img-thumbnail p-2" style="max-width: 75px;" alt="Product-img" />
-                            </a>
-                            <a href="javascript: void(0);" class="ml-2">
-                                <img src="assets/images/products/product-3.jpg" class="img-fluid img-thumbnail p-2" style="max-width: 75px;" alt="Product-img" />
-                            </a>
+
                         </div>
                     </div> <!-- end col -->
                     <div class="col-lg-7">
@@ -68,7 +71,7 @@
 
                             <!-- Product stock -->
                             <div class="mt-3">
-                                <h4><span class="badge badge-success-lighten">Instock</span></h4>
+                                <h4><span class="badge badge-info">{{$first->address}}</span></h4>
                             </div>
 
                             <!-- Product description -->
@@ -91,7 +94,7 @@
 
                                 </select>
                                 <div class="d-flex">
-                                    <a  id="btn-set-schedule" onclick="Send()" class="btn btn-danger ml-2" class="dripicons-basketball">Edit</a>
+                                    <a  id="btn-set-schedule" onclick="Send()" class="btn btn-danger ml-2" class="dripicons-basketball">Đặt sân</a>
                                 </div>
                             </div>
 
@@ -113,16 +116,16 @@
                             <div class="mt-4">
                                 <div class="row">
                                     <div class="col-md-4">
-                                        <h6 class="font-14">Available Stock:</h6>
-                                        <p class="text-sm lh-150">1784</p>
+                                        <h6 class="font-14">Tiêu chuẩn:</h6>
+                                        <p class="text-sm lh-150">5 sao</p>
                                     </div>
                                     <div class="col-md-4">
-                                        <h6 class="font-14">Number of Orders:</h6>
-                                        <p class="text-sm lh-150">5,458</p>
+                                        <h6 class="font-14">Loại cỏ:</h6>
+                                        <p class="text-sm lh-150">3cm</p>
                                     </div>
                                     <div class="col-md-4">
-                                        <h6 class="font-14">Revenue:</h6>
-                                        <p class="text-sm lh-150">$8,57,014</p>
+                                        <h6 class="font-14">Đèn:</h6>
+                                        <p class="text-sm lh-150">Led 5 pha</p>
                                     </div>
                                 </div>
                             </div>
@@ -135,64 +138,31 @@
                     <table class="table table-bordered table-centered mb-0">
                         <thead class="thead-light">
                         <tr>
-                            <th>Outlets</th>
-                            <th>Price</th>
-                            <th>Stock</th>
-                            <th>Revenue</th>
+                            <th>Tiện ích</th>
+                            <th>Giá</th>
+
                         </tr>
                         </thead>
                         <tbody>
                         <tr>
-                            <td>ASOS Ridley Outlet - NYC</td>
-                            <td>$139.58</td>
-                            <td>
-                                <div class="progress-w-percent mb-0">
-                                    <span class="progress-value">478 </span>
-                                    <div class="progress progress-sm">
-                                        <div class="progress-bar bg-success" role="progressbar" style="width: 56%;" aria-valuenow="56" aria-valuemin="0" aria-valuemax="100"></div>
-                                    </div>
-                                </div>
-                            </td>
-                            <td>$1,89,547</td>
+                            <td>Có chỗ để ô tô, xe máy</td>
+                            <td>Miễn phí</td>
+
                         </tr>
                         <tr>
-                            <td>Marco Outlet - SRT</td>
-                            <td>$149.99</td>
-                            <td>
-                                <div class="progress-w-percent mb-0">
-                                    <span class="progress-value">73 </span>
-                                    <div class="progress progress-sm">
-                                        <div class="progress-bar bg-danger" role="progressbar" style="width: 16%;" aria-valuenow="16" aria-valuemin="0" aria-valuemax="100"></div>
-                                    </div>
-                                </div>
-                            </td>
-                            <td>$87,245</td>
+                            <td>Wifi</td>
+                            <td>Miễn phí</td>
+
                         </tr>
                         <tr>
-                            <td>Chairtest Outlet - HY</td>
-                            <td>$135.87</td>
-                            <td>
-                                <div class="progress-w-percent mb-0">
-                                    <span class="progress-value">781 </span>
-                                    <div class="progress progress-sm">
-                                        <div class="progress-bar bg-success" role="progressbar" style="width: 72%;" aria-valuenow="72" aria-valuemin="0" aria-valuemax="100"></div>
-                                    </div>
-                                </div>
-                            </td>
-                            <td>$5,87,478</td>
+                            <td>Nước</td>
+                            <td>50k/xô</td>
+
                         </tr>
                         <tr>
-                            <td>Nworld Group - India</td>
-                            <td>$159.89</td>
-                            <td>
-                                <div class="progress-w-percent mb-0">
-                                    <span class="progress-value">815 </span>
-                                    <div class="progress progress-sm">
-                                        <div class="progress-bar bg-success" role="progressbar" style="width: 89%;" aria-valuenow="89" aria-valuemin="0" aria-valuemax="100"></div>
-                                    </div>
-                                </div>
-                            </td>
-                            <td>$55,781</td>
+                            <td>Thuê bóng</td>
+                            <td>50k/quả</td>
+
                         </tr>
                         </tbody>
                     </table>

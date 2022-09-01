@@ -23,7 +23,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 //trang chinh
-Route::get('/', [PageController::class, 'index']);
+Route::get('/', [PageController::class, 'index'])->name('page.index');
 Route::get('/page/{id}', [PageController::class, 'show'])->name('page.show');
 Route::get('/page/schedule/GetInfo', [PageController::class, 'show_modal'])->name('page.schedule');
 Route::any('/page/schedule/create/', [BillController::class, 'store'])->name('bill.store');
