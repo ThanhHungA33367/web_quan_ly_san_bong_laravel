@@ -27,14 +27,20 @@ class BillController extends Controller
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
+     * @throws \Exception
      */
-    public function getData()
+    public function getData(Request $request)
     {
-        return Datatables::of(Bill::query()
-            ->join('fields','id_field','=','fields.id')
-            ->select('bills.*','fields.name as fieldname','fields.type as fieldtype')
-            ->where('id_manager','=',Auth::id())
-            ->where('bills.status','=','1'))->make(true);
+
+            $data = Datatables::of(Bill::query()
+                ->join('fields','id_field','=','fields.id')
+                ->select('bills.*','fields.name as fieldname','fields.type as fieldtype')
+                ->where('id_manager','=',Auth::id())
+                ->where('bills.status','=','1'))->make(true);
+
+        return $data;
+
+
     }
     public function create()
     {

@@ -6,7 +6,13 @@
         <link rel='stylesheet' type='text/css' href='https://gyrocode.github.io/jquery-datatables-checkboxes/1.2.10/css/dataTables.checkboxes.css'>
 
     @endpush
-
+    <form class="float-right form-group form-inline" >
+        <label class="mr-2">Date from:</label>
+        <input type="date" name="date_from" value="" class="form-control" id="date_from">
+        <label class="mr-2">Date to:</label>
+        <input type="date" name="date_to" value="" class="form-control" id="date_to">
+        <button class="btn btn-xs btn-info" > Tìm </button>
+    </form>
             <table class="table table-striped" id="billTable">
 
                 <thead>
@@ -37,6 +43,7 @@
                     <th>Price</th>
                 </tr>
                 </tfoot>
+
             </table>
 
 
@@ -45,17 +52,22 @@
                 <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js' type='text/javascript'></script>
                 <script type='text/javascript' src='https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js'></script>
                 <script type='text/javascript' src='https://cdn.datatables.net/datetime/1.1.2/js/dataTables.dateTime.min.js'></script>
+                <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.2/moment.min.js'></script>
                 <script type='text/javascript' src='https://cdn.datatables.net/plug-ins/1.10.24/dataRender/datetime.js'></script>
                 <script type='text/javascript' src='https://gyrocode.github.io/jquery-datatables-checkboxes/1.2.10/js/dataTables.checkboxes.min.js'></script>
 
     <script>
+
+
+
         $(function() {
-            $('#billTable').DataTable({
+
+           $('#billTable').DataTable({
                 dom: 'lifrtBp',
                 processing: true,
                 serverSide: true,
-                type:"POST",
                 ajax: '{!! route('bill.getData') !!}',
+                method:"post",
                 columnDefs: [
                     {
                         'targets': 0,
@@ -67,6 +79,7 @@
                 select: {
                     'style': 'multi'
                 },
+
                 columns: [
                     { data: 'id', name: 'bills.id' },
                     { data: 'code_order', name: 'bills.code_order' },
@@ -79,7 +92,7 @@
                             if (data == null) return "";
                             var date = new Date(data);
                             var month = date.getMonth() + 1;
-                            return date.getDate() + "/" + (month.toString().length > 1 ? month : "0" + month)  + "/" + date.getFullYear();
+                            return date.getDate() + "/" + (month.toString().length > 1 ? month : "0" + month) + "/" + date.getFullYear();
                         }
                     },
                     { data: 'time_start', name: 'bills.time_end' ,
@@ -105,8 +118,10 @@
                     { data: 'price', name: 'bills.price' },
                 ],
 
+
             });
         });
+
     </script>
             @endpush
 @endsection

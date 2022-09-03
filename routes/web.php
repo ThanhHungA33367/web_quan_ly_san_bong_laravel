@@ -7,6 +7,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ManagerController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\PageController;
+use App\Http\Controllers\StatisticController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -58,6 +59,10 @@ Route::group(['prefix' => '/admin', 'middleware' => ['checkManagerLogin']], stat
 
     Route::get('/bill', [BillController::class, 'index'])->name('bill.index');
     Route::get('/bill/getData', [BillController::class, 'getData'])->name('bill.getData');
+
+    Route::get('/statistic', [StatisticController::class, 'index'])->name('statistic.index');
+    Route::get('/statistic/months', [StatisticController::class, 'index_revenue_months'])->name('statistic.revenue_months');
+
 });
 
 

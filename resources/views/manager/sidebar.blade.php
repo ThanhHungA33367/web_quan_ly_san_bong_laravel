@@ -89,10 +89,10 @@
                 </a>
                 <ul class="side-nav-second-level" aria-expanded="false">
                     <li>
-                        <a href="apps-projects-list.html">List</a>
+                        <a href="{{route('statistic.index')}}">Doanh thu(Ngày)</a>
                     </li>
                     <li>
-                        <a href="apps-projects-details.html">Details</a>
+                        <a href="{{route('statistic.revenue_months')}}">Doanh thu(Tháng)</a>
                     </li>
                     <li>
                         <a href="apps-projects-gantt.html">Gantt <span
