@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Field;
 use App\Http\Requests\StoreFieldRequest;
 use App\Http\Requests\UpdateFieldRequest;
+use HoangPhi\VietnamMap\Models\Province;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
@@ -21,7 +22,7 @@ class FieldController extends Controller
     {
         $search = $request->get('q');
         $data = Field::where('name','like','%' .$search. '%')->where('id_manager','=',Auth::id())->paginate(2)->appends(['q' => $search]);
-        return view('manager.field.index', [
+        return view('manager.field.view_field.index', [
             'data' => $data,
             'search'=>$search
         ]);
@@ -35,7 +36,11 @@ class FieldController extends Controller
      */
     public function create()
     {
-        return view('manager.field.create');
+        $province = Province::all();
+        return view('manager.field.create_field.create',[
+            'province' => $province,
+
+        ]);
     }
 
     /**
@@ -83,7 +88,7 @@ class FieldController extends Controller
     public function edit($id)
     {
         $object = Field::where('id','=',$id)->first();
-        return view('manager.field.modal_field_edit', [
+        return view('manager.field.view_field.modal_field_edit', [
             'object' => $object,
         ]);
 
@@ -119,8 +124,8 @@ class FieldController extends Controller
      * @param  \App\Models\Field  $field
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request,$id)
     {
-
+        Field::destroy($id);
     }
 }

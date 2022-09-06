@@ -7,7 +7,13 @@
 
                     <div class="col">
                         <div class="d-flex justify-content-between align-items-center flex-column flex-md-row mb-5">
-
+                            <select id="provinces">
+                                <option selected disabled>Chọn tỉnh</option>
+                                @foreach($provinces as $each)
+                                <option value="{{$each->id}}">{{$each->name}}</option>
+                                @endforeach
+                            </select>
+                            <div id="select_district"> </div>
                         </div>
                         <div class="row">
                             @foreach($data as $each)
@@ -44,6 +50,28 @@
             </div>
 
         </main>
+    <script>
+        $(document).ready(function (){
+            $('#provinces').on('change',function() {
+                let provincesId = $(this).val();
+                $.ajax({
+                    url: `/select/${provincesId}`,
+                    method:"get",
+                    beforeSend: function() {
+                        $('#loader').show();
+                    },
+                    success: function(res) {
+                        $('#select_district').html(res);
+                    },
+                    complete: function() {
+                        $('#loader').hide();
+                    },
+                })
+            });
+        })
+
+
+    </script>
 
 @endsection
 

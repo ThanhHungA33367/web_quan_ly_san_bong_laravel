@@ -27,7 +27,7 @@ class CalendarController extends Controller
     public function index_calendar()
     {
         $data =  Field::where('id_manager','=',Auth::id())->get();
-        return view('manager.field.calendar_index',[
+        return view('manager.field.view_field_calendar.calendar_index',[
             'data'=> $data,
             ]
         );
@@ -35,7 +35,7 @@ class CalendarController extends Controller
     public function index_calendar_show($id)
     {
         $data = Calendar::where('id_field','=',$id)->get();
-        return view('manager.field.calendar_index_show_table',[
+        return view('manager.field.view_field_calendar.calendar_index_show_table',[
                 'data'=> $data,
             ]
         );
@@ -49,7 +49,7 @@ class CalendarController extends Controller
     public function create()
     {
         $data = Field::where('id_manager','=',Auth::id())->get();
-        return view('manager.field.calendar', [
+        return view('manager.field.create_field_calendar.calendar', [
             'data' => $data,
         ]);
     }
@@ -84,7 +84,7 @@ class CalendarController extends Controller
     public function show($id)
     {
         $object = Calendar::where('id_field','=',$id)->get();
-        return view('manager.field.show_calendar', [
+        return view('manager.field.create_field_calendar.show_calendar', [
             'object' => $object,
         ]);
 
@@ -100,7 +100,7 @@ class CalendarController extends Controller
     public function edit($id)
     {
         $object = Calendar::where('id','=',$id)->first();
-        return view('manager.field.modal_calendar_edit',[
+        return view('manager.field.view_field_calendar.modal_calendar_edit',[
             'object' => $object
         ]);
     }

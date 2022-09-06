@@ -23,25 +23,25 @@
 
                 <!-- item-->
                 <a href="javascript:void(0);" class="dropdown-item notify-item">
-                    <img src="assets/images/flags/germany.jpg" alt="user-image" class="mr-1" height="12">
+
                     <span class="align-middle">German</span>
                 </a>
 
                 <!-- item-->
                 <a href="javascript:void(0);" class="dropdown-item notify-item">
-                    <img src="assets/images/flags/italy.jpg" alt="user-image" class="mr-1" height="12">
+
                     <span class="align-middle">Italian</span>
                 </a>
 
                 <!-- item-->
                 <a href="javascript:void(0);" class="dropdown-item notify-item">
-                    <img src="assets/images/flags/spain.jpg" alt="user-image" class="mr-1" height="12">
+
                     <span class="align-middle">Spanish</span>
                 </a>
 
                 <!-- item-->
                 <a href="javascript:void(0);" class="dropdown-item notify-item">
-                    <img src="assets/images/flags/russia.jpg" alt="user-image" class="mr-1" height="12">
+
                     <span class="align-middle">Russian</span>
                 </a>
 
@@ -91,8 +91,7 @@
                     <!-- item-->
                     <a href="javascript:void(0);" class="dropdown-item notify-item">
                         <div class="notify-icon">
-                            <img src="assets/images/users/avatar-2.jpg" class="img-fluid rounded-circle"
-                                 alt=""/></div>
+                        </div>
                         <p class="notify-details">Cristina Pride</p>
                         <p class="text-muted mb-0 user-msg">
                             <small>Hi, How are you? What about our next meeting</small>
@@ -112,8 +111,7 @@
                     <!-- item-->
                     <a href="javascript:void(0);" class="dropdown-item notify-item">
                         <div class="notify-icon">
-                            <img src="assets/images/users/avatar-4.jpg" class="img-fluid rounded-circle"
-                                 alt=""/></div>
+                        </div>
                         <p class="notify-details">Karen Robinson</p>
                         <p class="text-muted mb-0 user-msg">
                             <small>Wow ! this admin looks good and awesome design</small>
@@ -144,7 +142,7 @@
         <li class="dropdown notification-list d-none d-sm-inline-block">
             <a class="nav-link dropdown-toggle arrow-none" data-toggle="dropdown" href="#" role="button"
                aria-haspopup="false" aria-expanded="false">
-                <i class="dripicons-view-apps noti-icon"></i>
+
             </a>
             <div class="dropdown-menu dropdown-menu-right dropdown-menu-animated dropdown-lg p-0">
 
@@ -152,19 +150,19 @@
                     <div class="row no-gutters">
                         <div class="col">
                             <a class="dropdown-icon-item" href="#">
-                                <img src="assets/images/brands/slack.png" alt="slack">
+
                                 <span>Slack</span>
                             </a>
                         </div>
                         <div class="col">
                             <a class="dropdown-icon-item" href="#">
-                                <img src="assets/images/brands/github.png" alt="Github">
+
                                 <span>GitHub</span>
                             </a>
                         </div>
                         <div class="col">
                             <a class="dropdown-icon-item" href="#">
-                                <img src="assets/images/brands/dribbble.png" alt="dribbble">
+
                                 <span>Dribbble</span>
                             </a>
                         </div>
@@ -173,19 +171,19 @@
                     <div class="row no-gutters">
                         <div class="col">
                             <a class="dropdown-icon-item" href="#">
-                                <img src="assets/images/brands/bitbucket.png" alt="bitbucket">
+
                                 <span>Bitbucket</span>
                             </a>
                         </div>
                         <div class="col">
                             <a class="dropdown-icon-item" href="#">
-                                <img src="assets/images/brands/dropbox.png" alt="dropbox">
+
                                 <span>Dropbox</span>
                             </a>
                         </div>
                         <div class="col">
                             <a class="dropdown-icon-item" href="#">
-                                <img src="assets/images/brands/g-suite.png" alt="G Suite">
+
                                 <span>G Suite</span>
                             </a>
                         </div>
@@ -198,7 +196,7 @@
 
         <li class="notification-list">
             <a class="nav-link right-bar-toggle" href="javascript: void(0);">
-                <i class="dripicons-gear noti-icon"></i>
+
             </a>
         </li>
 
@@ -301,8 +299,8 @@
                 <!-- item-->
                 <a href="javascript:void(0);" class="dropdown-item notify-item">
                     <div class="media">
-                        <img class="d-flex mr-2 rounded-circle" src="assets/images/users/avatar-2.jpg"
-                             alt="Generic placeholder image" height="32">
+
+
                         <div class="media-body">
                             <h5 class="m-0 font-14">Erwin Brown</h5>
                             <span class="font-12 mb-0">UI Designer</span>
@@ -313,8 +311,7 @@
                 <!-- item-->
                 <a href="javascript:void(0);" class="dropdown-item notify-item">
                     <div class="media">
-                        <img class="d-flex mr-2 rounded-circle" src="assets/images/users/avatar-5.jpg"
-                             alt="Generic placeholder image" height="32">
+
                         <div class="media-body">
                             <h5 class="m-0 font-14">Jacob Deo</h5>
                             <span class="font-12 mb-0">Developer</span>

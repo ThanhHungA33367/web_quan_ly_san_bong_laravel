@@ -43,6 +43,17 @@
 
             </select>
         </div>
+        <from>
+        <div class="form-group mb-3">
+            <label for="example-password">Địa chỉ</label>
+            <select id="provinces"name="provinces" class="custom-select mb-3">
+                <option disabled selected>Chọn thành phố</option>
+                @foreach($province as $each)
+                    <option value="{{$each->id}}">{{$each->name}}</option>
+                @endforeach
+            </select>
+        </div>
+        </from>
         @error('type')
         <div class="alert alert-danger">{{ $message }}</div>
         @enderror

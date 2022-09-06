@@ -25,6 +25,7 @@ use Illuminate\Support\Facades\Route;
 
 //trang chinh
 Route::get('/', [PageController::class, 'index'])->name('page.index');
+Route::get('/select/{provincesId}', [PageController::class, 'getDistrict']);
 Route::get('/page/{id}', [PageController::class, 'show'])->name('page.show');
 Route::get('/page/schedule/GetInfo', [PageController::class, 'show_modal'])->name('page.schedule');
 Route::any('/page/schedule/create/', [BillController::class, 'store'])->name('bill.store');
@@ -41,7 +42,7 @@ Route::group(['prefix' => '/admin', 'middleware' => ['checkManagerLogin']], stat
     Route::post('/field/create', [FieldController::class, 'store'])->name('field.store');
     Route::get('/field/{field}', [FieldController::class, 'edit'])->name('field.edit');
     Route::put('/field/{field}', [FieldController::class, 'update'])->name('field.update');
-    Route::delete('/field/destroy', [FieldController::class, 'destroy'])->name('field.destroy');
+    Route::delete('/field/destroy/{id}', [FieldController::class, 'destroy'])->name('field.destroy');
 
     Route::get('/field/create/calendar', [CalendarController::class, 'create'])->name('calendar.create');
     Route::post('/field/create/calendar', [CalendarController::class, 'store'])->name('calendar.store');
