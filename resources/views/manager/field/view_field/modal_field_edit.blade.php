@@ -20,6 +20,9 @@ use App\Models\Field;
         <input type="text" name="address" class="form-control" value="{{$object->address}}">
     </div>
 
+
+
+
     <div class="form-group mb-3">
         <label for="example-password">Type</label>
         <select name="type" class="custom-select mb-3">

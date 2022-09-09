@@ -111,8 +111,4 @@
     </div>
     <script>
 
-
-
-
-
 @endsection

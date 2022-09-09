@@ -5,6 +5,7 @@
         <div class="form-group mb-3">
             <label>Sân</label>
             <br>
+
             <select id="field" class="custom-select mb-3 col-5" name="id_field">
                 <option disabled selected>Chọn sân</option>
                 @foreach($data as $each)

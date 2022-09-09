@@ -25,7 +25,8 @@ use Illuminate\Support\Facades\Route;
 
 //trang chinh
 Route::get('/', [PageController::class, 'index'])->name('page.index');
-Route::get('/select/{provincesId}', [PageController::class, 'getDistrict']);
+Route::get('/select/provinces/{provincesId}', [PageController::class, 'getDistrict']);
+Route::get('/select/districts/{districtsId}', [PageController::class, 'getWard']);
 Route::get('/page/{id}', [PageController::class, 'show'])->name('page.show');
 Route::get('/page/schedule/GetInfo', [PageController::class, 'show_modal'])->name('page.schedule');
 Route::any('/page/schedule/create/', [BillController::class, 'store'])->name('bill.store');
@@ -39,6 +40,8 @@ Route::group(['prefix' => '/admin', 'middleware' => ['checkManagerLogin']], stat
 
     Route::get('/field', [FieldController::class, 'index'])->name('field.index');
     Route::get('/field/create', [FieldController::class, 'create'])->name('field.create');
+    Route::get('/field/create/select/provinces/{provincesId}', [FieldController::class, 'getDistrict']);
+    Route::get('/field/create/select/districts/{districtsId}', [FieldController::class, 'getWard']);
     Route::post('/field/create', [FieldController::class, 'store'])->name('field.store');
     Route::get('/field/{field}', [FieldController::class, 'edit'])->name('field.edit');
     Route::put('/field/{field}', [FieldController::class, 'update'])->name('field.update');

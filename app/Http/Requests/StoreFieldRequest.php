@@ -26,8 +26,10 @@ class StoreFieldRequest extends FormRequest
             'type'=> 'required||in:Sân 7,Sân 11',
             'size'=> 'required',
             'image'=> 'required',
-            'time_open'=> 'required',
-            'time_close'=> 'required',
+            'province'=> 'required',
+            'district'=> 'required',
+            'ward'=> 'required',
+
         ];
     }
     public function messages(): array
@@ -50,8 +52,9 @@ class StoreFieldRequest extends FormRequest
             'type' => 'Ảnh',
             'size' => 'Kích thước',
             'image' => 'Ảnh',
-            'time_open' => 'Thời gian bắt đầu',
-            'time_close' => 'Thời gian kết thúc',
+            'province'=> 'Quận/Huyện',
+            'district'=> 'Thành phố/Tỉnh',
+            'ward'=> 'Phường/Xã',
 
         ];
 

@@ -6,10 +6,10 @@
             display: none;
         }
     </style>
+
 @foreach($data as $each )
-        <?php
-            $first = $each;
-        ?>
+
+
 
     @endforeach
 
@@ -46,12 +46,12 @@
 
                         <!-- Product image -->
                         <a href="javascript: void(0);" class="text-center d-block mb-4">
-                            <img src="{{asset('/storage/'.$first->image)}}" class="img-fluid" style="max-width: 450px;" alt="Product-img" />
+                            <img src="{{asset('/storage/'.$each->image)}}" class="img-fluid" style="max-width: 450px;" alt="Product-img" />
                         </a>
 
                         <div class="d-lg-flex d-none justify-content-center">
                             <a href="javascript: void(0);">
-                                <img src="{{asset('/storage/'.$first->image)}}" class="img-fluid img-thumbnail p-2" style="max-width: 75px;" alt="Product-img" />
+                                <img src="{{asset('/storage/'.$each->image)}}" class="img-fluid img-thumbnail p-2" style="max-width: 75px;" alt="Product-img" />
                             </a>
 
                         </div>
@@ -59,8 +59,8 @@
                     <div class="col-lg-7">
                         <form class="pl-lg-4">
                             <!-- Product title -->
-                            <h3 class="mt-0">{{$first->name}} <a href="javascript: void(0);" class="text-muted"></a> </h3>
-                            <p class="mb-1">Loại sân : {{$first->type}}</p>
+                            <h3 class="mt-0">{{$each->name}} <a href="javascript: void(0);" class="text-muted"></a> </h3>
+                            <p class="mb-1">Loại sân : {{$each->type}}</p>
                             <p class="font-16">
                                 <span class="text-warning mdi mdi-star"></span>
                                 <span class="text-warning mdi mdi-star"></span>
@@ -71,7 +71,7 @@
 
                             <!-- Product stock -->
                             <div class="mt-3">
-                                <h4><span class="badge badge-info">{{$first->address}}</span></h4>
+                                <h4><span class="badge badge-info">{{$each->address}},{{$each->wardsname}},{{$each->districtsname}},{{$each->provincesname}}</span></h4>
                             </div>
 
                             <!-- Product description -->
@@ -103,10 +103,10 @@
                             <!-- Product description -->
                             <div class="mt-4">
                                 <h6 class="font-14">Description:</h6>
-                                <p>{{$first->name}} được xây dựng hệ thống nhiều sân, tổ hợp gồm 6 sân 5 người.
+                                <p>{{$each->name}} được xây dựng hệ thống nhiều sân, tổ hợp gồm 6 sân 5 người.
                                     Sân bóng có đầy đủ tiện ích, công trình phụ trợ được đầu tư bài bản. Nằm ở khu vực giao thông thuận lợi,
                                     vị trí rộng rãi, thoáng mát.
-                                    Nằm ở trung tâm quận {{$first->name}}, {{$first->name}} là địa điểm yêu thích của công đồng bóng đá
+                                    Nằm ở trung tâm quận {{$each->name}}, {{$each->name}} là địa điểm yêu thích của công đồng bóng đá
                                     phủi quanh khu vực, bên cạnh đó chất lượng mặt cỏ tốt,
                                     thái độ nhân viên và giá thuê đều được đánh giá cao..
                                 </p>

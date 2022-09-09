@@ -1,25 +1,23 @@
-<label>
-    <select id="districts" name="districts" class="form-control">
-        <option selected disabled>Chọn phường</option>
-        @foreach($data as $each)
-            <option value="{{$each->id}}">{{$each->name}}</option>
-        @endforeach
-    </select>
-</label>
+
+<select id="district" name="district" class="custom-select mb-3" >
+    <option disabled selected>Chọn Quận</option>
+    @foreach($data as $each)
+        <option value="{{$each->id}}"> {{$each->name}}</option>
+    @endforeach
+</select>
 
 <script>
     $(document).ready(function (){
-        $('#districts').on('change',function() {
+        $('#district').on('change',function() {
             let districtsId = $(this).val();
-
             $.ajax({
-                url: `/select/districts/${districtsId}`,
+                url: `/admin/field/create/select/districts/${districtsId}`,
                 method:"get",
                 beforeSend: function() {
                     $('#loader').show();
                 },
                 success: function(res) {
-                    $('#select_ward').html(res);
+                    $('#wards').html(res);
                 },
                 complete: function() {
                     $('#loader').hide();
@@ -27,6 +25,5 @@
             })
         });
     })
-
 
 </script>

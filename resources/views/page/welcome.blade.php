@@ -6,14 +6,24 @@
                 <div class="row ">
 
                     <div class="col">
-                        <div class="d-flex justify-content-between align-items-center flex-column flex-md-row mb-5">
-                            <select id="provinces">
-                                <option selected disabled>Chọn tỉnh</option>
-                                @foreach($provinces as $each)
-                                <option value="{{$each->id}}">{{$each->name}}</option>
-                                @endforeach
-                            </select>
-                            <div id="select_district"> </div>
+                        <div class="row">
+                                <form class="row">
+                                    <div>
+                                    <label>
+                                        <select id="provinces" name="provinces" class="form-control">
+                                        <option selected disabled>Chọn tỉnh</option>
+                                        @foreach($provinces as $each)
+                                        <option value="{{$each->id}}">{{$each->name}}</option>
+                                        @endforeach
+                                        </select>
+                                    </label>
+                                    </div>
+                            <div id="select_district">
+                            </div>
+                            <div id="select_ward"> </div>
+                            <button class="btn-btn-info">Tìm</button>
+
+                                </form>
                         </div>
                         <div class="row">
                             @foreach($data as $each)
@@ -55,7 +65,7 @@
             $('#provinces').on('change',function() {
                 let provincesId = $(this).val();
                 $.ajax({
-                    url: `/select/${provincesId}`,
+                    url: `/select/provinces/${provincesId}`,
                     method:"get",
                     beforeSend: function() {
                         $('#loader').show();
@@ -69,7 +79,32 @@
                 })
             });
         })
-
+        // function Search_address() {
+        //     let provincesId = $('#provinces').val();
+        //     let districtsId = $('#districts').val();
+        //     let wardsId = $('#wards').val();
+        //     if (provincesId !== null || districtsId !== null || wardsId !== null) {
+        //         $.ajax({
+        //             url: `/`,
+        //             method: "get",
+        //             data: {
+        //                 provincesId: provincesId,
+        //                 districtsId: districtsId,
+        //                 wardsId: wardsId,
+        //             },
+        //             beforeSend: function () {
+        //                 $('#loader').show();
+        //             },
+        //             success: function (res) {
+        //
+        //             },
+        //             complete: function () {
+        //                 $('#loader').hide();
+        //             },
+        //         })
+        //     }
+        //
+        // }
 
     </script>
 

@@ -25,7 +25,7 @@ class Field extends Model
     {
         return Carbon::parse($this->time_close)->format('G:i');
     }
-    protected $fillable = ['title','name','phone','address','type','option','status','image','size','time_open','time_close'];
+    protected $fillable = ['title','name','phone','address','type','image','size','id_province','id_district','id_ward'];
     public function getPriceMin($id){
         return Calendar::where('id_field','=',$id )->min('price');
         }
