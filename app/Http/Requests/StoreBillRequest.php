@@ -25,7 +25,7 @@ class StoreBillRequest extends FormRequest
     public function rules() :array
     {
         return [
-            'name' => 'bail||required||alpha',
+            'name' => 'bail||required||',
             'phone'=> 'bail||required||min:10||max:12||regex:/(0)[0-9]{9}/'
         ];
     }
@@ -33,7 +33,6 @@ class StoreBillRequest extends FormRequest
     {
         return [
             'required' => 'Bạn chưa điền :attribute',
-            'name.alpha' => 'Tên phải là kí tự chữ',
             'phone.min' => 'Bạn phải nhập tối thiểu 10 kí tự',
             'phone.max' => 'Bạn chỉ được nhập tối đa 12 kí tự',
             'phone.regex' => 'Bạn sai số điện thoại',

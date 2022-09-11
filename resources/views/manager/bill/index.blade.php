@@ -6,13 +6,7 @@
         <link rel='stylesheet' type='text/css' href='https://gyrocode.github.io/jquery-datatables-checkboxes/1.2.10/css/dataTables.checkboxes.css'>
 
     @endpush
-    <form class="float-right form-group form-inline" >
-        <label class="mr-2">Date from:</label>
-        <input type="date" name="date_from" value="" class="form-control" id="date_from">
-        <label class="mr-2">Date to:</label>
-        <input type="date" name="date_to" value="" class="form-control" id="date_to">
-        <button class="btn btn-xs btn-info" > Tìm </button>
-    </form>
+
             <table class="table table-striped" id="billTable">
 
                 <thead>

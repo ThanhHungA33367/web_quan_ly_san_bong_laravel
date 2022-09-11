@@ -20,12 +20,17 @@ class OrderController extends Controller
             ->where('id_manager','=',Auth::id())
             ->where('bills.status','=','0')
             ->select('bills.*','fields.name as fieldname');
-        if($request->date_from !== null ) {
-            $data1->Where('time_start', $request->date_from);
+        if($request->date_from !== null && $request->date_to === null) {
+
+            $data1->where('time_start','like', '%'.$request->date_from.'%');
         }
-        if($request->date_from !== null && $request->date_to !== null) {
-            $data1->WhereBetween('time_start', array($request->date_from, $request->date_to));
+
+            if($request->date_from !== null && $request->date_to !== null) {
+
+                $data1->whereDate('time_start','>=',$request->date_from)->whereDate('time_start','<=',$request->date_to);
+
         }
+
         $data=$data1->paginate(2)->appends(['q' => $search]);
         return view('manager.order.pending_order', [
             'data' => $data,
