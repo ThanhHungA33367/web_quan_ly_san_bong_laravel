@@ -31,12 +31,14 @@ class StatisticController extends Controller
        $a = array();
 
        for($i = 0; $i < 12; $i++){
+
            $data = Bill::query()
                ->join('fields','fields.id','=','id_field')
                ->where('fields.id_manager','=',Auth::id())
                ->whereMonth('time_start','like','%'.$i.'%')
                ->where('bills.status','=','1')
                ->sum('price');
+
            $a[] = $data;
 
        }
